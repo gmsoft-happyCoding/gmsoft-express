@@ -21,8 +21,11 @@
     "npm": ">=5"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.140",
     "@typescript-eslint/eslint-plugin": "^2.3.0",
     "@typescript-eslint/parser": "^2.3.0",
+    "gmsoft-tools": "^1.0.10",
+    "lodash": "^4.17.15",
     "rollup": "^1.21.4",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
@@ -32,7 +35,8 @@
     "typescript": "^3.6.3"
   },
   "peerDependencies": {
-    "lodash": "^4.17.11"
+    "gmsoft-tools": "^1.0.10",
+    "lodash": "^4.17.15"
   },
   "files": [
     "es",

@@ -8956,6 +8956,10 @@ gm-react-hanger@^2.0.0:
   resolved "https://registry.npm.taobao.org/gm-react-hanger/download/gm-react-hanger-2.0.0.tgz#54b11901b4dbcb258cc03713fa338484fc31fc0f"
   integrity sha1-VLEZAbTbyyWMwDcT+jOEhPwx/A8=
 
+"gmsoft-express@link:../..":
+  version "0.0.0"
+  uid ""
+
 gmsoft-tools@^1.0.10:
   version "1.0.10"
   resolved "http://192.168.2.11:4873/gmsoft-tools/-/gmsoft-tools-1.0.10.tgz#337d0ea194b38058f4ee63ec5a5a29f4f176451a"

@@ -17,6 +17,11 @@
   resolved "http://192.168.2.11:4873/@types%2fjson-schema/-/json-schema-7.0.3.tgz#bdfd69d61e464dcc81b25159c270d75a73c1a636"
   integrity sha1-vf1p1h5GTcyBslFZwnDXWnPBpjY=
 
+"@types/lodash@^4.14.140":
+  version "4.14.140"
+  resolved "http://192.168.2.11:4873/@types%2flodash/-/lodash-4.14.140.tgz#8d2bd55e6a22221cd662bbb85969eb00ec283da6"
+  integrity sha1-jSvVXmoiIhzWYru4WWnrAOwoPaY=
+
 "@types/node@*", "@types/node@^12.7.5":
   version "12.7.8"
   resolved "http://192.168.2.11:4873/@types%2fnode/-/node-12.7.8.tgz#cb1bf6800238898bc2ff6ffa5702c3cadd350708"
@@ -101,6 +106,11 @@ concat-map@0.0.1:
   version "0.0.1"
   resolved "http://192.168.2.11:4873/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
+
+decimal.js-light@^2.5.0:
+  version "2.5.0"
+  resolved "http://192.168.2.11:4873/decimal.js-light/-/decimal.js-light-2.5.0.tgz#ca7faf504c799326df94b0ab920424fdfc125348"
+  integrity sha1-yn+vUEx5kybflLCrkgQk/fwSU0g=
 
 eslint-scope@^5.0.0:
   version "5.0.0"
@@ -187,6 +197,14 @@ glob@^7.1.4:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
+gmsoft-tools@^1.0.10:
+  version "1.0.10"
+  resolved "http://192.168.2.11:4873/gmsoft-tools/-/gmsoft-tools-1.0.10.tgz#337d0ea194b38058f4ee63ec5a5a29f4f176451a"
+  integrity sha1-M30OoZSzgFj07mPsWlop9PF2RRo=
+  dependencies:
+    decimal.js-light "^2.5.0"
+    ua-parser-js "^0.7.19"
+
 graceful-fs@^4.1.6, graceful-fs@^4.2.0:
   version "4.2.2"
   resolved "http://192.168.2.11:4873/graceful-fs/-/graceful-fs-4.2.2.tgz#6f0952605d0140c1cfdb138ed005775b92d67b02"
@@ -247,6 +265,11 @@ lodash.unescape@4.0.1:
   version "4.0.1"
   resolved "http://192.168.2.11:4873/lodash.unescape/-/lodash.unescape-4.0.1.tgz#bf2249886ce514cda112fae9218cdc065211fc9c"
   integrity sha1-vyJJiGzlFM2hEvrpIYzcBlIR/Jw=
+
+lodash@^4.17.15:
+  version "4.17.15"
+  resolved "http://192.168.2.11:4873/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
+  integrity sha1-tEf2ZwoEVbv+7dETku/zMOoJdUg=
 
 magic-string@^0.25.2:
   version "0.25.3"
@@ -435,6 +458,11 @@ typescript@^3.6.3:
   version "3.6.3"
   resolved "http://192.168.2.11:4873/typescript/-/typescript-3.6.3.tgz#fea942fabb20f7e1ca7164ff626f1a9f3f70b4da"
   integrity sha1-/qlC+rsg9+HKcWT/Ym8anz9wtNo=
+
+ua-parser-js@^0.7.19:
+  version "0.7.20"
+  resolved "http://192.168.2.11:4873/ua-parser-js/-/ua-parser-js-0.7.20.tgz#7527178b82f6a62a0f243d1f94fd30e3e3c21098"
+  integrity sha1-dScXi4L2pioPJD0flP0w4+PCEJg=
 
 universalify@^0.1.0:
   version "0.1.2"
