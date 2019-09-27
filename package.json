@@ -1,0 +1,42 @@
+{
+  "name": "gm-express",
+  "version": "1.0.0",
+  "description": "表达式执行器",
+  "main": "lib/index.js",
+  "module": "lib/index.es.js",
+  "typings": "lib/index.d.ts",
+  "repository": "https://github.com/gmsoft-happyCoding/gm-express.git",
+  "author": "dou <35251293+bdDandelion@users.noreply.github.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "pub": "yarn build && npm publish"
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.3.0",
+    "@typescript-eslint/parser": "^2.3.0",
+    "rollup": "^1.21.4",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-typescript2": "^0.24.2",
+    "rollup-plugin-url": "^2.2.2",
+    "typescript": "^3.6.3"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.11"
+  },
+  "files": [
+    "es",
+    "lib"
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0",
+  "description": "表达式执行器",
+  "name": "gm-express",
+  "main": "src/index.ts"
+}
