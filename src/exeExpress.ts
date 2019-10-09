@@ -1,11 +1,12 @@
 /**
- * 比较
+ * 执行表达式
  */
-import { isBoolean, isString, isNil } from 'lodash';
+import { isBoolean, isString } from 'lodash';
 
 import {
   ExpressionTransMark,
-  LOGIC_TRANS_MARKS,
+  LOGIC_TRANS_OR,
+  LOGIC_TRANS_AND,
   COMPARE_TRANS_MARKS,
   EXPRESSION_TRANS_FUNC_MAP,
 } from './configs/marks';
@@ -56,19 +57,26 @@ const getParams = (str: string, mark: string) => str.split(mark);
  * @param str
  */
 export const getExeGroup = (str: string): ExeGroupItem => {
-  // 1 处理 逻辑运算符
-  const [logicMark] = findFirstMarkIndex<ExpressionTransMark>(str, LOGIC_TRANS_MARKS);
-
-  if (logicMark) {
-    const [paramA, paramB] = getParams(str, logicMark);
+  // 1 处理 逻辑或 ||
+  if (str.includes(LOGIC_TRANS_OR)) {
+    const [paramA, paramB] = getParams(str, LOGIC_TRANS_OR);
     return {
-      exeFunc: logicMark,
+      exeFunc: LOGIC_TRANS_OR,
+      paramA: getExeGroup(paramA),
+      paramB: getExeGroup(paramB),
+    };
+  }
+  // 2 处理 逻辑与 &&
+  if (str.includes(LOGIC_TRANS_AND)) {
+    const [paramA, paramB] = getParams(str, LOGIC_TRANS_AND);
+    return {
+      exeFunc: LOGIC_TRANS_AND,
       paramA: getExeGroup(paramA),
       paramB: getExeGroup(paramB),
     };
   }
 
-  // 2 处理 比较运算符
+  // 3 处理 比较运算符
   const [compareMark] = findFirstMarkIndex(str, COMPARE_TRANS_MARKS);
 
   if (compareMark) {
@@ -96,32 +104,12 @@ const doExeGroup = (group: ExeGroupItem) =>
   );
 
 /** 执行比较 */
-export const compare = (rule: string, useSafeMode?: boolean): boolean => {
-  let result: any;
-  if (useSafeMode) {
-    try {
-      result = compose<boolean | any>(
-        doExeGroup,
-        getExeGroup,
-        transExpression
-      )(rule);
-    } catch (error) {
-      console.error(error);
-      result = false;
-    }
-  } else {
-    result = compose<boolean | any>(
-      doExeGroup,
-      getExeGroup,
-      transExpression
-    )(rule);
-  }
-
-  if (isBoolean(result)) {
-    return result;
-  }
-  return !isNil(result);
-};
+export const exeExpress = (rule: string) =>
+  compose<boolean | any>(
+    doExeGroup,
+    getExeGroup,
+    transExpression
+  )(rule);
 
 export type CompareStaticMap = Map<string, Set<string>>;
 
@@ -130,8 +118,8 @@ export type CompareStaticMap = Map<string, Set<string>>;
  * @param group
  * @param staticMap
  */
-const getMarksStatic = (group: ExeGroupItem, staticMap: Map<string, Set<string>> = new Map()) => {
-  let result = new Map(staticMap);
+const getMarksStatic = (group: ExeGroupItem, staticMap?: CompareStaticMap): CompareStaticMap => {
+  let result = staticMap ? new Map(staticMap) : new Map();
 
   const params = result.get(group.exeFunc);
   if (params) {
@@ -175,7 +163,7 @@ const getMarksStatic = (group: ExeGroupItem, staticMap: Map<string, Set<string>>
 };
 
 /** 统计操作符 */
-export const getCompareStatic = (rule: string) =>
+export const getExpressStatic = (rule: string) =>
   compose(
     getMarksStatic,
     getExeGroup,

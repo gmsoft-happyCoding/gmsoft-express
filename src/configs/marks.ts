@@ -15,6 +15,12 @@ export type ExpressionTransMark =
   | '__and__'
   | '__or__';
 
+/** 逻辑或 转译符 */
+export const LOGIC_TRANS_OR = '__or__';
+
+/** 逻辑与 转译符 */
+export const LOGIC_TRANS_AND = '__and__';
+
 /** 表达式符号 - 转译符号 映射 */
 export const EXPRESSION_TRANS_MAP = {
   '<=': '__lte__',
@@ -22,8 +28,19 @@ export const EXPRESSION_TRANS_MAP = {
   '=': '__equal__',
   '>=': '__gte__',
   '>': '__gt__',
-  '&&': '__and__',
-  '||': '__or__',
+  '&&': LOGIC_TRANS_AND,
+  '||': LOGIC_TRANS_OR,
+};
+
+/** 表达式符号 - 正则匹配转译 映射 */
+export const EXPRESSION_REG_MAP = {
+  '<=': /<=/g,
+  '<': /</g,
+  '=': /=/g,
+  '>=': />=/g,
+  '>': />/g,
+  '&&': /&&/g,
+  '||': /\|\|/g,
 };
 
 /** 表达式转译符号 - 函数 映射 */
@@ -50,12 +67,14 @@ export const EXPRESSION_TRANS_MSG_MAP = {
 
 /** 逻辑运算符 */
 export const LOGIC_MARKS = ['&&', '||'];
+
 /** 逻辑运算符-转译 */
 export const LOGIC_TRANS_MARKS: ExpressionTransMark[] = LOGIC_MARKS.map(
   item => EXPRESSION_TRANS_MAP[item]
 );
 /** 比较运算符 */
 export const COMPARE_MARKS = ['<=', '<', '>=', '>', '='];
+
 /** 比较运算符-转译 */
 export const COMPARE_TRANS_MARKS: ExpressionTransMark[] = COMPARE_MARKS.map(
   item => EXPRESSION_TRANS_MAP[item]
