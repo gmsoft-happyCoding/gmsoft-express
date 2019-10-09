@@ -1,5 +1,5 @@
 {
-  "name": "gm-express",
+  "name": "gmsoft-express",
   "version": "1.0.0",
   "description": "表达式执行器",
   "main": "lib/index.js",
