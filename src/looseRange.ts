@@ -1,7 +1,7 @@
 /**
  * 获取表达式的宽泛区间
  */
-import { isArray } from 'lodash';
+import { isArray, memoize } from 'lodash';
 import { lt, gt, lte, gte } from 'gmsoft-tools';
 
 import { transExpression } from './translate';
@@ -143,12 +143,16 @@ const fillterEqualSign = (staticObj: { [key: string]: string }) => {
   return newStaticObj;
 };
 
+const getExpressionLooseRangeBase = (str: string | string[], fill: string) =>
+  fillterEqualSign(getCompareMaxMinValueMap(getCompareStaticMap(str), fill));
+
 /**
  * 取出表达式的宽松区间
  * @param str 表达式
  */
-export const getExpressionLooseRange = (str: string | string[], fill: string) =>
-  fillterEqualSign(getCompareMaxMinValueMap(getCompareStaticMap(str), fill));
+export const getExpressionLooseRange = memoize(getExpressionLooseRangeBase, (...agrs) =>
+  JSON.stringify(agrs)
+);
 
 /**
  * 将值 与 区间 进行比较
@@ -156,7 +160,7 @@ export const getExpressionLooseRange = (str: string | string[], fill: string) =>
  * @param range
  * @param value
  */
-export const doCompareWithExpressionRange = (
+const doCompareWithExpressionRangeBase = (
   range: {
     [key: string]: string;
   },
@@ -183,3 +187,12 @@ export const doCompareWithExpressionRange = (
   }
   return false;
 };
+/**
+ * 将值 与 区间 进行比较
+ * 只支持 && 的情况
+ * @param range
+ * @param value
+ */
+export const doCompareWithExpressionRange = memoize(doCompareWithExpressionRangeBase, (...agrs) =>
+  JSON.stringify(agrs)
+);

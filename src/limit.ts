@@ -1,4 +1,4 @@
-import { isString, isObject } from 'lodash';
+import { isString, isObject, memoize } from 'lodash';
 
 import compose from './utils/compose';
 import { transMsgExpression, transExpression } from './translate';
@@ -32,12 +32,12 @@ export function fillLimit(limit, sign, signVal?) {
   return res;
 }
 
-export function limitToMsg(limit: string, sign: { [key: string]: string }): string;
+function limitToMsgBase(limit: string, sign: { [key: string]: string }): string;
 
-export function limitToMsg(limit: string, sign: string, signVal: string): string;
+function limitToMsgBase(limit: string, sign: string, signVal: string): string;
 
 /**
- * 填充规则不等式
+ * 语义化表达式
  * @param limit
  * @param sign
  * @param signVal
@@ -45,10 +45,10 @@ export function limitToMsg(limit: string, sign: string, signVal: string): string
  * // => '采购金额小于等于1'
  * limitToMsg('sum<=1','sum','采购金额')
  * @example
- * // => '采购金额<=1&&数量大于等于10'
+ * // => '采购金额<=1并且数量大于等于10'
  * limitToMsg('sum<=1&&amount>=10',{sum:'采购金额',amount:'数量'})
  */
-export function limitToMsg(limit, sign, signVal?) {
+function limitToMsgBase(limit, sign, signVal?) {
   return fillLimit(
     compose(
       transMsgExpression,
@@ -58,3 +58,5 @@ export function limitToMsg(limit, sign, signVal?) {
     signVal
   );
 }
+
+export const limitToMsg = memoize(limitToMsgBase, (...agrs) => JSON.stringify(agrs));

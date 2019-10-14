@@ -1,7 +1,7 @@
 /**
  * 执行表达式
  */
-import { isBoolean, isString } from 'lodash';
+import { isBoolean, isString, memoize } from 'lodash';
 
 import {
   ExpressionTransMark,
@@ -103,13 +103,15 @@ const doExeGroup = (group: ExeGroupItem) =>
     isBasicData(group.paramB) ? group.paramB : doExeGroup(group.paramB)
   );
 
-/** 执行比较 */
-export const exeExpress = (rule: string) =>
+const exeExpressBase = (rule: string) =>
   compose<boolean | any>(
     doExeGroup,
     getExeGroup,
     transExpression
   )(rule);
+
+/** 执行比较 */
+export const exeExpress = memoize(exeExpressBase);
 
 export type CompareStaticMap = Map<string, Set<string>>;
 
@@ -162,10 +164,12 @@ const getMarksStatic = (group: ExeGroupItem, staticMap?: CompareStaticMap): Comp
   return result;
 };
 
-/** 统计操作符 */
-export const getExpressStatic = (rule: string) =>
+const getExpressStaticBase = (rule: string) =>
   compose(
     getMarksStatic,
     getExeGroup,
     transExpression
   )(rule);
+
+/** 统计操作符 */
+export const getExpressStatic = memoize(getExpressStaticBase);
