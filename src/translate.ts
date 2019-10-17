@@ -14,7 +14,7 @@ export const transExpression = (str: string) => {
   let res = str;
   ALL_EXPRESSIONS.map(item => {
     if (res.includes(item)) {
-      res = res.replace(new RegExp(EXPRESSION_REG_MAP[item], 'g'), EXPRESSION_TRANS_MAP[item]);
+      res = res.replace(EXPRESSION_REG_MAP[item], EXPRESSION_TRANS_MAP[item]);
     }
   });
   return res;
