@@ -1,11 +1,11 @@
 {
-  "name": "gmsoft-express",
-  "version": "1.0.3",
+  "name": "@gmsoft/express",
+  "version": "1.1.0",
   "description": "表达式执行器",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
   "typings": "lib/index.d.ts",
-  "repository": "https://github.com/gmsoft-happyCoding/gm-express.git",
+  "repository": "gmsoft-happyCoding/gmsoft-express",
   "author": "dou <35251293+bdDandelion@users.noreply.github.com>",
   "license": "MIT",
   "publishConfig": {
@@ -14,17 +14,17 @@
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "pub": "yarn build && npm publish"
+    "pub": "yarn build && npm publish --access public"
   },
   "engines": {
     "node": ">=8",
     "npm": ">=5"
   },
   "devDependencies": {
+    "@gmsoft/tools": "^1.2.1",
     "@types/lodash": "^4.14.140",
     "@typescript-eslint/eslint-plugin": "^2.3.0",
     "@typescript-eslint/parser": "^2.3.0",
-    "gmsoft-tools": "^1.0.10",
     "lodash": "^4.17.15",
     "rollup": "^1.21.4",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -35,7 +35,7 @@
     "typescript": "^3.6.3"
   },
   "peerDependencies": {
-    "gmsoft-tools": "^1.0.10",
+    "@gmsoft/tools": "^1.2.1",
     "lodash": "^4.17.15"
   },
   "files": [

@@ -1380,6 +1380,18 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
+"@gmsoft/express@link:../..":
+  version "0.0.0"
+  uid ""
+
+"@gmsoft/tools@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/@gmsoft/tools/-/tools-1.2.1.tgz#bf108aa8797c21a0ceb940783877eae93ef2d0a0"
+  integrity sha512-h91zua6rzF4MED9WpTtRin4J0ETRpuWpO5P/pW/cUxUNoWVwatgOf3njebKmpMZbj2xQGQMttwDGvMVvwYWXMA==
+  dependencies:
+    decimal.js-light "^2.5.0"
+    ua-parser-js "^0.7.19"
+
 "@hutson/parse-repository-url@^3.0.0":
   version "3.0.2"
   resolved "https://registry.npm.taobao.org/@hutson/parse-repository-url/download/@hutson/parse-repository-url-3.0.2.tgz#98c23c950a3d9b6c8f0daed06da6c3af06981340"
@@ -6059,8 +6071,8 @@ decamelize@^2.0.0:
 
 decimal.js-light@^2.5.0:
   version "2.5.0"
-  resolved "http://192.168.2.11:4873/decimal.js-light/-/decimal.js-light-2.5.0.tgz#ca7faf504c799326df94b0ab920424fdfc125348"
-  integrity sha1-yn+vUEx5kybflLCrkgQk/fwSU0g=
+  resolved "https://registry.npmjs.org/decimal.js-light/-/decimal.js-light-2.5.0.tgz#ca7faf504c799326df94b0ab920424fdfc125348"
+  integrity sha512-b3VJCbd2hwUpeRGG3Toob+CRo8W22xplipNhP3tN7TSVB/cyMX71P1vM2Xjc9H74uV6dS2hDDmo/rHq8L87Upg==
 
 decode-uri-component@^0.2.0:
   version "0.2.0"
@@ -8955,18 +8967,6 @@ gm-react-hanger@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/gm-react-hanger/download/gm-react-hanger-2.0.0.tgz#54b11901b4dbcb258cc03713fa338484fc31fc0f"
   integrity sha1-VLEZAbTbyyWMwDcT+jOEhPwx/A8=
-
-"gmsoft-express@link:../..":
-  version "0.0.0"
-  uid ""
-
-gmsoft-tools@^1.0.10:
-  version "1.0.10"
-  resolved "http://192.168.2.11:4873/gmsoft-tools/-/gmsoft-tools-1.0.10.tgz#337d0ea194b38058f4ee63ec5a5a29f4f176451a"
-  integrity sha1-M30OoZSzgFj07mPsWlop9PF2RRo=
-  dependencies:
-    decimal.js-light "^2.5.0"
-    ua-parser-js "^0.7.19"
 
 got@^6.3.0:
   version "6.7.1"
@@ -18443,10 +18443,15 @@ typescript@<3.6.0, typescript@^3:
   resolved "https://registry.npm.taobao.org/typescript/download/typescript-3.5.3.tgz#c830f657f93f1ea846819e929092f5fe5983e977"
   integrity sha1-yDD2V/k/HqhGgZ6SkJL1/lmD6Xc=
 
-ua-parser-js@^0.7.18, ua-parser-js@^0.7.19:
+ua-parser-js@^0.7.18:
   version "0.7.20"
   resolved "https://registry.npm.taobao.org/ua-parser-js/download/ua-parser-js-0.7.20.tgz#7527178b82f6a62a0f243d1f94fd30e3e3c21098"
   integrity sha1-dScXi4L2pioPJD0flP0w4+PCEJg=
+
+ua-parser-js@^0.7.19:
+  version "0.7.21"
+  resolved "https://registry.npmjs.org/ua-parser-js/-/ua-parser-js-0.7.21.tgz#853cf9ce93f642f67174273cc34565ae6f308777"
+  integrity sha512-+O8/qh/Qj8CgC6eYBVBykMrNtp5Gebn4dlGD/kKXVkJNDwyrAwSIqwz8CDf+tsAIWVycKcku6gIXJ0qwx/ZXaQ==
 
 uglify-es@^3.3.4:
   version "3.3.9"

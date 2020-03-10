@@ -1,4 +1,4 @@
-import { lte, lt, gt, gte, isStrNumEqual } from 'gmsoft-tools';
+import { lte, lt, gt, gte, isStrNumEqual } from '@gmsoft/tools';
 
 import { logicAnd, logicOr } from '../utils/logic';
 

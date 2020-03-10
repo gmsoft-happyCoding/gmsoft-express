@@ -10,7 +10,7 @@ import React, { useState, useEffect } from 'react';
 import { isEqual } from 'lodash';
 import { Row, Col, Input, Form, Card, Button, Alert, Descriptions } from 'antd';
 import { FormComponentProps } from 'antd/lib/form';
-import * as gmsoft_express from 'gmsoft-express';
+import * as gmsoft_express from '@gmsoft/express';
 
 const formItemLayout = {
   labelCol: { span: 6 },

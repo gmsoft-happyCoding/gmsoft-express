@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.6",
+    "@gmsoft/tools": "^1.2.1",
     "@types/jest": "23.3.10",
     "@types/lodash": "^4.14.119",
     "@types/node": "10.12.12",
@@ -25,8 +26,7 @@
     "dva": "^2.4.1",
     "dva-model-creator": "^0.1.4",
     "gm-react-hanger": "^2.0.0",
-    "gmsoft-tools": "^1.0.10",
-    "gmsoft-express": "link:../../",
+    "@gmsoft/express": "link:../../",
     "history": "^4.7.2",
     "immer": "1.8.0",
     "lodash": "^4.17.15",

@@ -2,7 +2,7 @@
  * 数组工具函数
  * @param arr
  */
-import { lt, gt } from 'gmsoft-tools';
+import { lt, gt } from '@gmsoft/tools';
 
 export const getArrMin = (arr: string[]) => {
   let min = arr[0];

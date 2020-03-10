@@ -2,7 +2,7 @@
  * 获取表达式的宽泛区间
  */
 import { isArray, memoize } from 'lodash';
-import { lt, gt, lte, gte } from 'gmsoft-tools';
+import { lt, gt, lte, gte } from '@gmsoft/tools';
 
 import { transExpression } from './translate';
 import { EXPRESSION_TRANS_MAP } from './configs/marks';
