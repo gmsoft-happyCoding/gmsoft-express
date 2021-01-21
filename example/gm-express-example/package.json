@@ -28,7 +28,7 @@
     "gm-react-hanger": "^2.0.0",
     "@gmsoft/express": "link:../../",
     "history": "^4.7.2",
-    "immer": "1.8.0",
+    "immer": "8.0.1",
     "lodash": "^4.17.15",
     "moment": "2.22.2",
     "ramda": "^0.26.1",
