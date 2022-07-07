@@ -30,7 +30,7 @@
     "history": "^4.7.2",
     "immer": "1.8.0",
     "lodash": "^4.17.15",
-    "moment": "2.22.2",
+    "moment": "2.29.4",
     "ramda": "^0.26.1",
     "react": "16.8.6",
     "react-app-polyfill": "^0.1.3",
